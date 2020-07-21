@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link
+	href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+	rel="stylesheet">
+
+ <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+<title>Jquery Events</title>
+<style type="text/css">
+.errorClass {
+	border: 1px solid red;
+	border-style: solid;
+}
+
+.properClass {
+	border: 5px solid green;
+	border-style: solid;
+}
+</style>
+</head>
+<body onload="fun1()">
+
+	<div class="container-fluid">
+	
+		<nav class="navbar navbar-inverse">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Hospital Management System</a>
+			</div>
+			<ul class="nav navbar-nav ">
+				<li class="active"><a id="anchor1" href="domManipulation.html">Login</a></li>
+				
+				<li class="dropdown">
+				
+				
+				<a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Patient <span class="caret"></span></a>
+					
+					<ul class="dropdown-menu">
+						<li><a href="option1.html">Register</a></li>
+						<li><a  href="option2.html">Update</a></li>
+						<li><a href="#">Delete</a></li>
+						<li><a href="#">Select</a></li>
+					</ul>
+					
+					
+					
+					</li>
+					
+					
+				<li><a href="#">Smart Search</a></li>
+				<li><a href="#">Billing</a></li>
+			</ul>
+		</nav>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Patient Reg</div>
+			<div class="panel-body">
+				<form id="frmEmp"  action="url" method="post">
+					<!-- <div class="row">
+					
+						<div class="col-md-4">
+							<label for="patient">Name:</label> 
+							<input type="text"
+								id="patient">
+						</div>
+						
+						<div class="col-md-4">
+							<label for="age">Age:</label> <input type="text" id="age">
+						</div>
+						<div class="col-md-4">
+							<label for="dob">DoB:</label> <input type="text" id="dob">
+						</div>
+						
+						<hr>
+						<div class="col-md-4">
+							<label for="doa" style="float: left; width: 10%;">DoA:</label> <input
+								type="text" id="doa">
+						</div>
+						<div class="col-md-4">
+							<label for="bedNumber" style="float: left; width: 8%;">Bed:</label>
+							<input type="text" id="bedNumber">
+						</div>
+						<div class="col-md-4">
+							<label for="contNumber" style="float: left; width: 8%;">Mob:</label>
+							<input type="text" id="contNumber">
+						</div>
+						<input id="frmSubmit" type="submit" value="submit">
+						  <input
+							id="frmStop" type="Button"  value="Stop Events">
+							 <input
+							id="frmButton" type="Button" value="Start Events">
+					</div>
+ -->
+				</form>
+			</div>
+		</div>
+		
+		<!-- <div id="banner" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+		
+			 Welcome
+			<p class="id1" id="p1">First paragraph</p>
+			<p class="id2" >Second paragraph</p>
+			
+		 <div id="jmb" class="jumbotron">Bootstrap Jumbotron display</div> 
+		</div> -->
+		
+	</div>
+	<script type="text/javascript">
+	//style="height:100px;width:300px;border:1px solid black;background-color:yellow;"
+			
+				
+	//var user=localStorage.getItem("basicSalary");
+	//alert("welcome "+user);
+ $(function() {
+    $( "#dob" ).datepicker();
+    $( "#doa" ).datepicker();
+  });
+
+ $(document).ready(function(){
+	    $("#frmEmp").submit(function(e){
+			/* var name=$("#patient").val();
+			var age=$("#age").val();
+			var doa=$("#doa").val();
+			var dob=$("#dob").val();
+			var bedNum=$("#bedNumber").val();
+			var conNum=$("#contNumber").val();
+			var flag=false;
+			 			e.preventDefault(); */
+				//var t=8/0;
+				//alert(t);
+	    	e.preventDefault();
+	       
+	    });
+
+
+//lets have events in Jquery
+
+	            $("#frmButton").click(function(){
+	    	   $("#jmb").slideUp(5000);
+	    }); 
+  
+	       $("#frmStop").click(function(){
+		    $("#jmb").stop();
+	    });  
+	     
+	    $("#frmButton").dblclick(function(){
+		      
+	    	$("#jmb").slideDown(4000);
+	    });      
+
+	   
+	        /*   $("#banner").mouseenter(function(){
+		    alert("Mouse Enter Event");
+	    });   
+
+	       $("#banner").mouseleave(function(){
+		    alert("Mouse Leave Event");
+	    });     */
+  
+	        /*  $("#banner").hover(function(){
+		         
+		    alert("Mouse hover 1 Event");
+		    },
+		    
+		function(){
+				
+		    alert("Mouse hover 2 Event");
+	    });   */ 
+	       
+	        /* $("#age").focus(function(){
+	   	    alert("you  have to enter numeric value");
+	       })  */
+	        
+	      
+              /* $("#age").blur(function(){
+		       var age=$('#age').val();
+		       var name=$('#patient').val();
+		       
+		       if(age<18){
+		    	   alert("your age is below the rule");
+			       }  
+		    
+	    });     */
+	    
+	  //lets have Dom in Jquery
+	  //html,set,val methods
+	    /*  $("#frmButton").click(function(){
+		   alert("HTML: " + $("#banner").html());
+
+
+	      alert("HTML: " + $("#banner").text());
+		  //alert("HTML: " + $("#banner").val());//not applicable for div's
+		  //alert("HTML: " + $("#age").val());
+		   
+	    }); */	 
+
+	    	
+	      /*  $("#frmButton").click(function(){//demostrating this off the jumbotron
+		   //$("#banner").prepend("Some prepended text.");
+   		   //$("#banner").append("Some appended text.");
+		  // $("#banner").after("Some appended text.");
+		   //$("#banner").before("Some appended text."); 
+ 
+			    /*  var name=$("#name").val();
+			    var age=$("#age").val();
+			   var ch=parseInt(age);
+			    if(ch==1){
+				   $("#banner").prepend(name);
+				   }  //console.log("======="); 
+	    });   */
+ 
+		//remove method removed all elements child also here use css styling
+	      /*  $("#frmButton").click(function(){
+	    	//$("#banner").remove();
+	    	$("#banner").empty();
+		    });  */ 
+	     
+	      //removing perticular component
+	     // $("#frmButton").click(function(){
+	    	//$("p").remove("#p1");
+	    	//$("p").remove(".id2");
+		   // }); 
+	     
+		   //css manipulation
+	       $("#frmButton").click(function(){
+		       
+	    	//$("#p1").css("color", "red");
+	    	//$("#p1").css({"background-color":"green","font-size": "170%"});
+	    	//$("#age").css("background-color","blue");
+	    	//$("#age").css("color", "green");
+	    	 var age=$("#age").val();
+			   var ch=parseInt(age);
+			   if(ch<10){
+				  // $("#age").css('border-color','red');
+				  
+				 $("#age").removeClass("properClass");//green collor
+				   $("#age").addClass("errorClass");//red collor
+				   } else{
+
+					   $("#age").removeClass("errorClass");
+					   $("#age").addClass("properClass");
+					   }
+			  
+	    	//$("#age").removeClass("properClass");
+	    	
+		    });   
+ 		 
+		 //Link Manipulation
+	     $("#frmStop").click(function(){
+				//location.href="bom.html";
+				
+				$("#anchor1").attr("href","bom.html");//bom.html replaces the domManipulation.html
+
+	    	  });
+
+	   	  function fun1(){
+                var u=localstorage.getIteam("user");
+                if(u=="account"){
+                	$("#op2").attr("href","domManipulation.html");//bom.html replaces the domManipulation.html
+					
+                    }
+		   	  }
+ 	});
+
+ </script>
+</body>
+</html>
